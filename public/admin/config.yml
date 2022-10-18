@@ -22,4 +22,5 @@ collections:
           time_format: 'HH:mm',
           format: 'LLL',
         }
+      - { label: 'Auther', name: 'blogAuthor', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
