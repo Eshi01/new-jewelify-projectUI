@@ -24,7 +24,7 @@ collections:
           format: 'LLL',
         }
       - { label: 'Auther', name: 'blogAuthor', widget: 'string' }
-       - {
+      - {
           label: 'Auther Image',
           name: 'authorImage',
           widget: 'image',
@@ -38,7 +38,7 @@ collections:
           name: 'blogImage',
           widget: 'image',
           choose_url: true,
-          default: '/img/default-propic.jpg',
+          default: '/images/g20.png',
           media_folder: '/public/img',
           multiple: true,
         }
