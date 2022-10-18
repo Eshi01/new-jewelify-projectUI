@@ -24,12 +24,21 @@ collections:
           format: 'LLL',
         }
       - { label: 'Auther', name: 'blogAuthor', widget: 'string' }
+       - {
+          label: 'Auther Image',
+          name: 'authorImage',
+          widget: 'image',
+          choose_url: true,
+          default: '/img/default-propic.jpg',
+          media_folder: '/public/img',
+          multiple: true,
+        }
       - {
-          label: 'Featured Image',
+          label: 'Blog Image',
           name: 'blogImage',
           widget: 'image',
           choose_url: true,
-          default: '/public/img/default-propic.jpg',
+          default: '/img/default-propic.jpg',
           media_folder: '/public/img',
           multiple: true,
         }

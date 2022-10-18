@@ -30,7 +30,7 @@ export default function Blog({ frontmatter, markdown }) {
             className='image-69'
           />
           <p className='paragraph-37 _1'>{frontmatter.blogAuthor}</p>
-          <p className='paragraph-37'>{frontmatter.timeToRead}</p>
+          <p className='paragraph-37'>5 min read</p>
         </div>
         <div className='div-block-248'>
           <img
