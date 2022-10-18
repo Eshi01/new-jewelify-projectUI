@@ -30,7 +30,7 @@ collections:
           widget: 'image',
           choose_url: true,
           default: '/img/default-propic.jpg',
-          media_folder: '/public/img',
+          media_folder: '/img',
           multiple: true,
         }
       - {
@@ -39,7 +39,7 @@ collections:
           widget: 'image',
           choose_url: true,
           default: '/images/g20.png',
-          media_folder: '/public/img',
+          media_folder: '/images',
           multiple: true,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
