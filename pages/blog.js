@@ -33,6 +33,7 @@ export async function getStaticProps() {
 }
 
 const App = ({ blogs }) => {
+  console.log(blogs)
   const router = useRouter()
   return (
     <div className='wrapper'>
@@ -74,40 +75,38 @@ const App = ({ blogs }) => {
             >
               <div className='row'>
                 {blogs.map((blog) => (
-                  <div key={blog.slug}>
-                    <div className='col-4'>
-                      <div style={{ padding: '3%' }}>
+                  <div className='col-4' key={blog.slug}>
+                    <div style={{ padding: '3%' }}>
+                      <img
+                        src={blogs.blogImage}
+                        className=''
+                        style={{ paddingBottom: '3%' }}
+                      ></img>
+                      <p className='text-dark'>Jewellery Article</p>
+
+                      <Link href={`/blog/${blog.slug}`}>
+                        <h2>Grow Your Jeweller Store Online Easily</h2>
+                      </Link>
+                    </div>
+
+                    <div className='row d-flex justify-content-center p-3'>
+                      <div className='col-2'>
                         <img
-                          src='images/g21.png'
+                          src='images/g28.png'
                           className=''
                           style={{ paddingBottom: '3%' }}
                         ></img>
-                        <p className='text-dark'>Jewellery Article</p>
-
-                        <Link href={`/blog/${blog.slug}`}>
-                          <h2>Grow Your Jeweller Store Online Easily</h2>
-                        </Link>
                       </div>
-
-                      <div className='row d-flex justify-content-center p-3'>
-                        <div className='col-2'>
-                          <img
-                            src='images/g28.png'
-                            className=''
-                            style={{ paddingBottom: '3%' }}
-                          ></img>
-                        </div>
-                        <div className='col-10 pt-2'>
-                          <p className='text-dark'>Jhom Olison | 5 min read</p>
-                        </div>
+                      <div className='col-10 pt-2'>
+                        <p className='text-dark'>Jhom Olison | 5 min read</p>
                       </div>
-                      <p>
-                        Maximize returns by growing your jewelry store business.
-                        Integrate your on-premise legacy POS system with
-                        Jewelify’s user-friendly cloud-based platform and start
-                        selling online. Once integrated, you can:
-                      </p>
                     </div>
+                    <p>
+                      Maximize returns by growing your jewelry store business.
+                      Integrate your on-premise legacy POS system with
+                      Jewelify’s user-friendly cloud-based platform and start
+                      selling online. Once integrated, you can:
+                    </p>
                   </div>
                 ))}
                 <div className='col-4'>

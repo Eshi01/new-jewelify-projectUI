@@ -16,7 +16,7 @@ twitterDescription: Hyperscale Media is an agency of former fortune 500 growth
 twitterImage: https://uploads-ssl.webflow.com/605c57757b3ae676ffca1b7b/61108f4ce360641c2b8ce61d_pexels-wolfram-k-745243.jpg
 eventNameForTracking: Drive Sales With Landing Pages For Retail Jewelers Blog Page View
 eventIdForTracking: 13
-title: Drive Sales With Landing Pages For Retail Jewelers
+blogTitle: Drive Sales With Landing Pages For Retail Jewelers
 author: Rene Rojano
 authorDescription: Rene Rojano is awesome
 authorImage: /images/Ellipse-18.png

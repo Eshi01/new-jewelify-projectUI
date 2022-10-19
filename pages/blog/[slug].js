@@ -20,7 +20,7 @@ export default function Blog({ frontmatter, markdown }) {
           </a>
         </div>
         <div>
-          <h1 className='heading-134'>{frontmatter.title}</h1>
+          <h1 className='heading-134'>{frontmatter.blogTitle}</h1>
         </div>
         <div className='author-div-wrapper'>
           <img
