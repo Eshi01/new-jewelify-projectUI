@@ -7,66 +7,6 @@ export default class BlogPagePreview extends React.Component {
 
     return (
       <div>
-        <Head>
-          <meta charSet='utf-8' />
-          {/* Title Tag */}
-          <title>{entry.getIn(['data', 'titleTag'])}</title>
-
-          {/* Meta Description */}
-          <meta
-            content={entry.getIn(['data', 'metaDescription'])}
-            name='description'
-          />
-
-          {/* OG Title */}
-          <meta
-            content={entry.getIn(['data', 'ogTitle'])}
-            property='og:title'
-          />
-
-          {/* OG Description */}
-          <meta
-            content={entry.getIn(['data', 'ogDescription'])}
-            property='og:description'
-          />
-
-          {/* OG Image */}
-          <meta
-            content={entry.getIn(['data', 'ogImage'])}
-            property='og:image'
-          />
-
-          {/* Twitter Title */}
-          <meta
-            content={entry.getIn(['data', 'twittertitle'])}
-            property='twitter:title'
-          />
-
-          {/* Twitter Description */}
-          <meta
-            content={entry.getIn(['data', 'twitterDescription'])}
-            property='twitter:description'
-          />
-
-          {/* Twitter Image */}
-          <meta
-            content={entry.getIn(['data', 'twitterImage'])}
-            property='twitter:image'
-          />
-
-          <meta property='og:type' content='website' />
-          <meta content='summary_large_image' name='twitter:card' />
-          <meta content='width=device-width, initial-scale=1' name='viewport' />
-
-          {/* Favicon*/}
-          <link href='/images/favicon.png' rel='icon' type='image/png' />
-
-          {/* Webclip */}
-          <link href='/images/webclip.png' rel='apple-touch-icon' />
-
-          {/* Fall Back CSS */}
-          {/* [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] */}
-        </Head>
         <div>
           <div>
             <div className='div-block-98 v2' />
