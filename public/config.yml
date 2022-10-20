@@ -12,44 +12,34 @@ collections:
     folder: 'content/blogs' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:
-      - { label: 'Slug', name: 'slug', widget: 'string' }
-      - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
-      - { label: 'Meta Description', name: 'metaDescription', widget: 'string' }
-      - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
-      - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
-      - { label: 'OG Image', name: 'ogImage', widget: 'image' }
-      - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
-      - {
-          label: 'Twitter Description',
-          name: 'twitterDescription',
-          widget: 'string',
-        }
-      - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
-      - {
-          label: 'Event Name For Tracking',
-          name: 'eventNameForTracking',
-          widget: 'string',
-        }
-      - {
-          label: 'Event ID For Tracking',
-          name: 'eventIdForTracking',
-          widget: 'string',
-        }
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Blog Title', name: 'blogTitle', widget: 'string' }
-      - { label: 'Author', name: 'blogAuthor', widget: 'string' }
       - {
-          label: 'Author Description',
-          name: 'authorDescription',
-          widget: 'string',
+          label: 'Publish Date',
+          name: 'publishDate',
+          widget: 'datetime',
+          date_format: 'DD.MM.YYYY',
+          time_format: 'HH:mm',
+          format: 'LLL',
         }
-      - { label: 'Author Image', name: 'authorImage', widget: 'image' }
-      - { label: 'Publish Date', name: 'publishDate', widget: 'string' }
-      - { label: 'Time To Read', name: 'timeToRead', widget: 'string' }
+      - { label: 'Auther', name: 'blogAuthor', widget: 'string' }
+      - {
+          label: 'Auther Image',
+          name: 'authorImage',
+          widget: 'image',
+          choose_url: true,
+          default: '/img/default-propic.jpg',
+          media_folder: '/img',
+          multiple: true,
+        }
       - {
           label: 'Blog Image',
           name: 'blogImage',
           widget: 'image',
-          required: false,
+          choose_url: true,
+          default: '/images/g20.png',
+          media_folder: '/images',
+          multiple: true,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
