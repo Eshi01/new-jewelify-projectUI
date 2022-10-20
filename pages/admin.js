@@ -14,6 +14,10 @@ const Admin = () => {
         BlogOverviewPagePreview
       )
       CMS.registerPreviewTemplate('blog', BlogPagePreview)
+
+      CMS.registerPreviewStyle('css/normalize.css')
+      CMS.registerPreviewStyle('css/webflow.css')
+      CMS.registerPreviewStyle('css/jewelify.webflow.css')
     })()
   }, [])
 
