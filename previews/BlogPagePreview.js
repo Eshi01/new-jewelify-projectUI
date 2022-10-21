@@ -1,17 +1,73 @@
 import React from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 
 export default class BlogPagePreview extends React.Component {
   render() {
     const { entry } = this.props
-    const blogTitle = entry.getIn(['data', 'blogTitle'])
-    const authorImage = entry.getIn(['data', 'authorImage'])
-    const blogAuthor = entry.getIn(['data', 'blogAuthor'])
-    const blogImage = entry.getIn(['data', 'blogImage'])
-    const publishDate = entry.getIn(['data', 'publishDate'])
 
     return (
       <div>
+        <Head>
+          <meta charSet='utf-8' />
+          {/* Title Tag */}
+          <title>{entry.getIn(['data', 'titleTag'])}</title>
+
+          {/* Meta Description */}
+          <meta
+            content={entry.getIn(['data', 'metaDescription'])}
+            name='description'
+          />
+
+          {/* OG Title */}
+          <meta
+            content={entry.getIn(['data', 'ogTitle'])}
+            property='og:title'
+          />
+
+          {/* OG Description */}
+          <meta
+            content={entry.getIn(['data', 'ogDescription'])}
+            property='og:description'
+          />
+
+          {/* OG Image */}
+          <meta
+            content={entry.getIn(['data', 'ogImage'])}
+            property='og:image'
+          />
+
+          {/* Twitter Title */}
+          <meta
+            content={entry.getIn(['data', 'twittertitle'])}
+            property='twitter:title'
+          />
+
+          {/* Twitter Description */}
+          <meta
+            content={entry.getIn(['data', 'twitterDescription'])}
+            property='twitter:description'
+          />
+
+          {/* Twitter Image */}
+          <meta
+            content={entry.getIn(['data', 'twitterImage'])}
+            property='twitter:image'
+          />
+
+          <meta property='og:type' content='website' />
+          <meta content='summary_large_image' name='twitter:card' />
+          <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+          {/* Favicon*/}
+          <link href='/images/favicon.png' rel='icon' type='image/png' />
+
+          {/* Webclip */}
+          <link href='/images/webclip.png' rel='apple-touch-icon' />
+
+          {/* Fall Back CSS */}
+          {/* [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] */}
+        </Head>
         <div>
           <div>
             <div className='div-block-98 v2' />
@@ -29,23 +85,29 @@ export default class BlogPagePreview extends React.Component {
                   </a>
                 </div>
                 <div>
-                  <h1 className='heading-134'>{blogTitle}</h1>
+                  <h1 className='heading-134'>
+                    {entry.getIn(['data', 'blogTitle'])}
+                  </h1>
                 </div>
                 <div className='author-div-wrapper'>
                   <img
-                    src={authorImage}
+                    src={entry.getIn(['data', 'authorImage'])}
                     loading='lazy'
                     alt=''
                     className='image-69'
                   />
-                  <p className='paragraph-37 _1'>{blogAuthor}</p>
-                  <p className='paragraph-37'>5 min read</p>
+                  <p className='paragraph-37 _1'>
+                    {entry.getIn(['data', 'blogAuthor'])}
+                  </p>
+                  <p className='paragraph-37'>
+                    {entry.getIn(['data', 'timeToRead'])}
+                  </p>
                 </div>
                 <div className='div-block-248'>
                   <img
                     loading='lazy'
                     sizes='(max-width: 479px) 91vw, (max-width: 1279px) 90vw, 1092px'
-                    src={blogImage}
+                    src={entry.getIn(['data', 'blogImage'])}
                     alt=''
                   />
                   <div className='blog-content-wrapper'>
@@ -94,17 +156,23 @@ export default class BlogPagePreview extends React.Component {
                       </div>
                     </div>
                     <div className='blog-content-wrapper-div'>
-                      <div className='div-block-255'></div>
+                      <div className='div-block-255'>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: entry.getIn(['data', 'body']),
+                          }}
+                        ></div>
+                      </div>
                       <div className='div-block-251'>
                         <div className='div-block-250'>
                           <p className='paragraph-38'>
-                            Published {publishDate}
+                            Published {entry.getIn(['data', 'publishDate'])}
                           </p>
                         </div>
                         <div className='div-block-253'>
                           <div className='div-block-252'>
                             <img
-                              src={authorImage}
+                              src={entry.getIn(['data', 'authorImage'])}
                               loading='lazy'
                               alt=''
                               className='image-65'
@@ -112,8 +180,12 @@ export default class BlogPagePreview extends React.Component {
                           </div>
                           <div className='div-block-254'>
                             <p className='paragraph-39'>Written by</p>
-                            <p className='blop-author-name'>{blogAuthor}</p>
-                            <p className='paragraph-40'></p>
+                            <p className='blop-author-name'>
+                              {entry.getIn(['data', 'author'])}
+                            </p>
+                            <p className='paragraph-40'>
+                              {entry.getIn(['data', 'authorDescription'])}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -217,6 +289,19 @@ export default class BlogPagePreview extends React.Component {
             </div>
           </div>
         </div>
+        <Script
+          id='script-1'
+          src='https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=605c57757b3ae676ffca1b7b'
+          type='text/javascript'
+          integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0='
+          crossorigin='anonymous'
+        ></Script>
+        <Script
+          id='script-2'
+          src='js/webflow.js'
+          type='text/javascript'
+        ></Script>
+        {/* [if lte IE 9]><Script id="script-3" src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></Script><![endif] */}
       </div>
     )
   }

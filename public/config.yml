@@ -1,45 +1,298 @@
 backend:
   name: git-gateway
+  repo: Eshi01/new-jewelify-projectUI
   branch: main # Branch to update (optional; defaults to master)
-
-media_folder: 'public/uploads' # Where media files will be stored
-public_folder: '/uploads' # Where the media files can be accesed from the server
-publish_mode: editorial_workflow # For Drafts
-
+media_folder: public/uploads
+public_folder: /uploads
 collections:
-  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-    label: 'Blog' # Used in the UI
-    folder: 'content/blogs' # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: 'Title', name: 'title', widget: 'string' }
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: 'About Page SEO Settings'
+        name: 'About Page SEO Settings'
+        file: 'public/content/about.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Appointment Page SEO Settings'
+        name: 'Appointment Page SEO Settings'
+        file: 'public/content/appointment.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Blog Page SEO Settings'
+        name: 'Blog Page SEO Settings'
+        file: 'public/content/blog.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Checkout Page SEO Settings'
+        name: 'Checkout Page SEO Settings'
+        file: 'public/content/checkout.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Confirmation Page SEO Settings'
+        name: 'Confirmation Page SEO Settings'
+        file: 'public/content/confirmation.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Development Page SEO Settings'
+        name: 'Development Page SEO Settings'
+        file: 'public/content/development.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Index Page SEO Settings'
+        name: 'Index Page SEO Settings'
+        file: 'public/content/index.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Pricing Page SEO Settings'
+        name: 'Pricing Page SEO Settings'
+        file: 'public/content/pricing.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Sign In Page SEO Settings'
+        name: 'Sign In Page SEO Settings'
+        file: 'public/content/sign-in.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Sign Up Page SEO Settings'
+        name: 'Sign Up Page SEO Settings'
+        file: 'public/content/sign-up.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Solution Page SEO Settings'
+        name: 'Solutions Page SEO Settings'
+        file: 'public/content/solutions.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - label: 'Testimonials Page SEO Settings'
+        name: 'Testimonials Page SEO Settings'
+        file: 'public/content/testimonials.md'
+        fields:
+          - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+          - {
+              label: 'Meta Description',
+              name: 'metaDescription',
+              widget: 'string',
+            }
+          - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+          - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+          - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+          - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+          - {
+              label: 'Twitter Description',
+              name: 'twitterDescription',
+              widget: 'string',
+            }
+          - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+  - name: 'blog'
+    label: 'Blog Posts'
+    folder: 'public/posts'
+    create: true
+    identifier_field: slug
+    fields:
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Title Tag', name: 'titleTag', widget: 'string' }
+      - { label: 'Meta Description', name: 'metaDescription', widget: 'string' }
+      - { label: 'OG Title', name: 'ogTitle', widget: 'string' }
+      - { label: 'OG Description', name: 'ogDescription', widget: 'string' }
+      - { label: 'OG Image', name: 'ogImage', widget: 'image' }
+      - { label: 'Twitter Title', name: 'twitterTitle', widget: 'string' }
+      - {
+          label: 'Twitter Description',
+          name: 'twitterDescription',
+          widget: 'string',
+        }
+      - { label: 'Twitter Image', name: 'twitterImage', widget: 'image' }
+      - {
+          label: 'Event Name For Tracking',
+          name: 'eventNameForTracking',
+          widget: 'string',
+        }
+      - {
+          label: 'Event ID For Tracking',
+          name: 'eventIdForTracking',
+          widget: 'string',
+        }
       - { label: 'Blog Title', name: 'blogTitle', widget: 'string' }
+      - { label: 'Author', name: 'blogAuthor', widget: 'string' }
       - {
-          label: 'Publish Date',
-          name: 'publishDate',
-          widget: 'datetime',
-          date_format: 'DD.MM.YYYY',
-          time_format: 'HH:mm',
-          format: 'LLL',
+          label: 'Author Description',
+          name: 'authorDescription',
+          widget: 'string',
         }
-      - { label: 'Auther', name: 'blogAuthor', widget: 'string' }
-      - {
-          label: 'Auther Image',
-          name: 'authorImage',
-          widget: 'image',
-          choose_url: true,
-          default: '/img/default-propic.jpg',
-          media_folder: '/img',
-          multiple: true,
-        }
+      - { label: 'Author Image', name: 'authorImage', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'string' }
+      - { label: 'Time To Read', name: 'timeToRead', widget: 'string' }
       - {
           label: 'Blog Image',
           name: 'blogImage',
           widget: 'image',
-          choose_url: true,
-          default: '/images/g20.png',
-          media_folder: '/images',
-          multiple: true,
+          required: false,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
